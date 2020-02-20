@@ -134,8 +134,8 @@ function animate(){
     
     ctx.clearRect(0,0, innerWidth, innerHeight);
     for(let i = 0; i < particlesArray.length; i++){
-        let opacity = 1/0.01*getDistance((particlesArray[i].x - mouse.x), (particlesArray[i].y - mouse.y));
-        console.log(1/5*getDistance((particlesArray[i].x - mouse.x), (particlesArray[i].y - mouse.y)));
+        let opacity = 1/getDistance(1/(particlesArray[i].x - mouse.x), 1/(particlesArray[i].y - mouse.y));
+       // console.log(1/getDistance(1/(particlesArray[i].x - mouse.x), 1/(particlesArray[i].y - mouse.y)));
         let color = 'rgba(0,0,0,' + opacity + ')';
         particlesArray[i].setColor(color);
         particlesArray[i].update();
